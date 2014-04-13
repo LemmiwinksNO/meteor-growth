@@ -23,9 +23,9 @@
     {{> reminder}}
 
     <div class="row">
-      {{> focusItem}}
-      {{> focusItem}}
-      {{> focusItem}}
+      {{#each focuses}}
+        {{> focusItem}}
+      {{/each}}
     </div> <!-- .row -->
   </div> <!-- #main-region -->
 </template>
@@ -41,8 +41,8 @@
 <template name="focusItem">
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="focus-area">
-      <img class="focus-img" src="/snow-leopard.jpg" />
-      <h2 class="focus-title ellipsis">Primal Supple Leopard</h2>
+      <img class="focus-img" src="{{imageUrl}}" />
+      <h2 class="focus-title ellipsis">{{title}}</h2>
       <div class="input-group input-group-lg">
         <input type="text" class="form-control" placeholder="New Task">
         <span class="input-group-btn">
@@ -53,10 +53,9 @@
       </div>
       <hr>
       <ul class="task-list">
-        {{> taskItem}}
-        {{> taskItem}}
-        {{> taskItem}}
-        {{> taskItem}}
+        {{#each tasks}}
+          {{> taskItem}}
+        {{/each}}
       </ul>
     </div>
   </div>
@@ -67,11 +66,11 @@
     <!-- left-hand side checkbox-->
     <div class="task-controls task-primary">
       <span class="task-checker action-yesno">
-        <input type="checkbox" id="box4" class="visuallyhidden focusable">
-        <label for="box4"></label>
+        <input type="checkbox" id="{{_id}}" class="visuallyhidden focusable">
+        <label for="{{_id}}"></label>
       </span>
     </div>
     <!-- main content -->
-    <div class="task-text">Do this task!</div>
+    <div class="task-text">{{title}}</div>
   </li>
 </template>
