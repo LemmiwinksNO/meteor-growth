@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-/* line 25, ../sass/home.scss */
-.row {
-  margin: 0;
-}
-
 /* line 29, ../sass/home.scss */
 #main-region {
   padding-top: 40px;
