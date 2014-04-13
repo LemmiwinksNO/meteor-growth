@@ -3,7 +3,6 @@
 // Variables
 $headerHeight: 40px;
 
-
 // Mixins
 // Syntax = name time timing_function
 @mixin animation ($properties) {
@@ -20,11 +19,6 @@ $headerHeight: 40px;
 
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 *, :before, :after { @include box-sizing(border-box) }
-
-// MODIFYING BOOTSTRAP ROW
-.row {
-  // margin: 0;
-}
 
 #main-region {
   padding-top: $headerHeight;
@@ -56,17 +50,42 @@ header {
   }
 }
 
+// Login Buttons
+.login-buttons {
+  // float: right;
+  padding-top: 8px;
+  margin-left: 10px;
+  list-style-type: none;
+  font-size: 20px;
+  display: inline-block;
+
+  &:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #428bca;
+      text-decoration: none;
+    }
+  }
+}
+
 // New Focus
 button.new-focus {
   color: #fff;
   float: right;
   position: relative;
-  background-color: transparent;
-  margin-top: 7px;
+  background-color: black;
+  margin-top: 8px;
   margin-right: 5px;
-  font-size: 21px;
+  font-size: 20px;
   border: none;
   outline: none;
+  display: inline-block;
 
   &:hover {
     color: #428bca;
@@ -95,8 +114,7 @@ $completed_color: rgb(217, 217, 217);
 .random-quote {
   text-align: center;
   font-style: italic;
-  margin: 10px;
-  padding-top: 12px;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 

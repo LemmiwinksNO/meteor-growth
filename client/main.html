@@ -13,11 +13,12 @@
 <template name="header">
   <div id="header-region">
     <header><h1><a href="/">GROW</a></h1></header>
+    <div class="login-buttons">{{> loginButtons}}</div>
+    <button type="button" class="new-focus">New Focus</button>
   </div> <!-- id="header-region" -->
 </template>
 
 <template name="focusList">
-  <button type="button" class="new-focus">New Focus</button>
 
   <div id="main-region" class="container-fluid">
     {{> reminder}}
