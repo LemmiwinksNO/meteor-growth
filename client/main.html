@@ -72,8 +72,50 @@
     <div class="add-new-focus">
       <div class="focus-area">
         <h2 class="focus-title ellipsis">Add New Focus</h2>
+        <form role="form">
+          <div class="form-group">
+            <input name="title" type="text" class="form-control" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <input name="why" type="text" class="form-control" placeholder="Why?">
+          </div>
+          <div class="form-group">
+            <input name="url" type="text" class="form-control" placeholder="Picture URL">
+          </div>
+          <div class="form-group">
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Upload a picture that represents this focus!</p>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="newFocus1">
+  <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="add-new-focus">
+      <div class="focus-area">
+        <h2 class="focus-title ellipsis">Add New Focus</h2>
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="New Focus">
+          <input type="text" class="form-control" placeholder="Title">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="URL">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="Why?">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">
               <span class="glyphicon glyphicon-plus"></span>
