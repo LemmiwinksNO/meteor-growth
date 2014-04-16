@@ -2,66 +2,92 @@
 if (db.focuses.find().count() === 0) {
   var now = new Date().getTime();
 
+  // This is my user ID, I don't think Meteor.userId() would work here
+  // but it's worth trying.
+  userId = "zWf3Bu2hEQKzjiqBw";
+
   // Insert 3 focuses
   var primalId = db.focuses.insert({
     title: "Primal Supple Leopard",
-    imageUrl: "/snow-leopard.jpg"
+    userId: userId,
+    imageUrl: "/snow-leopard.jpg",
+    why: "For suppleness!"
   });
   var programmerId = db.focuses.insert({
     title: "Pragmatic Programmer",
-    imageUrl: "/forestApple.jpg"
+    userId: userId,
+    imageUrl: "/forestApple.jpg",
+    why: "Building things feels good.\nUsefulness - Create things that add value\nMoney"
   });
   var elephantId = db.focuses.insert({
     title: "Elephant Rider",
-    imageUrl: "/buddha-riding-elephant.jpg"
+    userId: userId,
+    imageUrl: "/buddha-riding-elephant.jpg",
+    why: "Think more effectively and creatively.\nIncrease presence."
   });
 
   // Insert 3 tasks for each focus
   db.tasks.insert({
-    focusId: primalId,
     title: "Primal Task!",
+    focusId: primalId,
     completed: false,
+    created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: primalId,
     title: "Primal Task!",
+    focusId: primalId,
     completed: false,
+    created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: primalId,
     title: "Primal Task!",
+    focusId: primalId,
+    userId: userId,
     completed: false,
+    created: now - 7 * 24 * 3600 * 1000,
   });
 
   db.tasks.insert({
-    focusId: programmerId,
     title: "Programming Task!",
+    focusId: programmerId,
+    userId: userId,
     completed: false,
+    created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: programmerId,
     title: "Programming Task!",
+    focusId: programmerId,
+    userId: userId,
     completed: false,
+    created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: programmerId,
     title: "Programming Task!",
+    focusId: programmerId,
+    userId: userId,
     completed: false,
+    created: now - 7 * 24 * 3600 * 1000,
   });
 
   db.tasks.insert({
-    focusId: elephantId,
     title: "Elephant Rider Task!",
+    focusId: elephantId,
+    userId: userId,
     completed: false,
+    created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: elephantId,
     title: "Elephant Rider Task!",
+    focusId: elephantId,
+    userId: userId,
     completed: false,
+    created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
-    focusId: elephantId,
     title: "Elephant Rider Task!",
+    focusId: elephantId,
+    userId: userId,
     completed: false,
+    created: now - 7 * 24 * 3600 * 1000,
   });
 }
