@@ -6,9 +6,11 @@
 
 <body>
   <div id="wrap">
-    {{> header}}
-    {{> focusList}}
-    {{> newFocusModal}}
+    <div id="header-region">{{> header}}</div>
+    <div id="main-region">
+      {{> focusList}}
+      {{> newFocusModal}}
+    </div>
   </div> <!-- #wrap -->
 </body>
 
@@ -69,17 +71,13 @@
 </template>
 
 <template name="header2">
-  <div id="header-region">
-    <header><h1><a href="/">GROW</a></h1></header>
-    <div class="login-buttons">{{> loginButtons}}</div>
-    <button type="button" class="new-focus">New Focus</button>
-  </div>
+  <header><h1><a href="/">GROW</a></h1></header>
+  <div class="login-buttons">{{> loginButtons}}</div>
+  <button type="button" class="new-focus">New Focus</button>
 </template>
 
 <template name="focusList">
-
-  <div id="main-region" class="container-fluid">
-    <!-- <button type="button" class="new-focus">New Focus</button> -->
+  <div class="focus-list container-fluid">
 
     {{> reminder}}
 
@@ -87,7 +85,6 @@
       {{#each focuses}}
         {{> focusItem}}
       {{/each}}
-      {{> newFocus}}
     </div> <!-- .row -->
   </div> <!-- #main-region -->
 </template>
@@ -95,65 +92,7 @@
 <template name="reminder">
   <div class="row">
     <div class="col-md-12">
-      <div class="random-quote">Here's a cool quote.</div>
-    </div>
-  </div>
-</template>
-
-<template name="newFocus">
-  <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="add-new-focus">
-      <div class="focus-area">
-        <h2 class="focus-title ellipsis">Add New Focus</h2>
-        <form role="form">
-          <div class="form-group">
-            <input name="title" type="text" class="form-control" placeholder="Title">
-          </div>
-          <div class="form-group">
-            <input name="imageUrl" type="text" class="form-control" placeholder="Picture URL">
-          </div>
-          <div class="form-group">
-            <!-- <input name="why" type="text" class="form-control" placeholder="Why?"> -->
-            <textarea name="why" class="form-control" rows="3" placeholder="Why?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</template>
-
-<template name="newFocus1">
-  <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="add-new-focus">
-      <div class="focus-area">
-        <h2 class="focus-title ellipsis">Add New Focus</h2>
-        <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="Title">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-        <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="URL">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-        <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="Why?">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-        <hr>
-      </div>
+      <div class="reminder">Here's a cool quote.</div>
     </div>
   </div>
 </template>

@@ -1,9 +1,9 @@
 @import "compass/css3";
 
-// Variables
+/** Variables **/
 $headerHeight: 40px;
 
-// Mixins
+/** Mixins **/
 // Syntax = name time timing_function
 @mixin animation ($properties) {
     -webkit-animation: $properties;
@@ -17,6 +17,8 @@ $headerHeight: 40px;
     animation-fill-mode: $mode;
 }
 
+
+/** GENERAL **/
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 *, :before, :after { @include box-sizing(border-box) }
 
@@ -24,7 +26,25 @@ $headerHeight: 40px;
   padding-top: 70px;
 }
 
-// HEADER
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reminder {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.col-lg-3 {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+/** HEADER **/
 header {
   background: black;
   color: #fff;
@@ -111,36 +131,7 @@ button.new-focus {
 }
 
 
-// HOME CSS
-
-// Colors
-$worst_color:     rgb(230, 184, 175);
-$worse_color:     rgb(244, 204, 204);
-$bad_color:       rgb(252, 229, 205);
-$neutral_color:   rgb(255, 242, 204);
-$good_color:      rgb(217, 234, 211);
-$better_color:    rgb(208, 224, 227);
-$best_color:      rgb(201, 218, 248);
-$completed_color: rgb(217, 217, 217);
-
-.ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.random-quote {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.col-lg-3 {
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-
+/** FOCUS LIST RELATED **/
 .focus-area {
   padding: 1.5em;
   background: #f5f5f5;
@@ -267,6 +258,16 @@ $completed_color: rgb(217, 217, 217);
   }
 }
 
+// Task Colors
+$worst_color:     rgb(230, 184, 175);
+$worse_color:     rgb(244, 204, 204);
+$bad_color:       rgb(252, 229, 205);
+$neutral_color:   rgb(255, 242, 204);
+$good_color:      rgb(217, 234, 211);
+$better_color:    rgb(208, 224, 227);
+$best_color:      rgb(201, 218, 248);
+$completed_color: rgb(217, 217, 217);
+
 .color-worst {
   background-color: $worst_color;
 
@@ -332,8 +333,7 @@ $completed_color: rgb(217, 217, 217);
   }
 }
 
-
-
+// We use this for the checkbox on each task.
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
