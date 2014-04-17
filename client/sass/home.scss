@@ -74,10 +74,23 @@ header {
   }
 }
 
-// New Focus Butto in header
+// New Focus Button in header
 .new-focus {
   cursor: pointer;
 }
+
+// Focus modal styling
+body.modal-open {
+  // By default this does hidden, which make the screen jump from having a scroll
+  // bar to not having one. 
+  overflow-y: scroll;
+}
+
+#focus-modal {
+  overflow: hidden;
+}
+
+
 
 // New Focus
 button.new-focus {

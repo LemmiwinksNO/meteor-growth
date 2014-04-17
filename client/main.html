@@ -8,8 +8,41 @@
   <div id="wrap">
     {{> header}}
     {{> focusList}}
+    {{> newFocusModal}}
   </div> <!-- #wrap -->
 </body>
+
+<!-- Modal -->
+<template name="newFocusModal">
+  <div class="modal fade" id="focus-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">New Focus</h4>
+        </div>
+        <form role="form">
+          <div class="modal-body">
+              <div class="form-group">
+                <input name="title" type="text" class="form-control" placeholder="Title">
+              </div>
+              <div class="form-group">
+                <input name="imageUrl" type="text" class="form-control" placeholder="Picture URL">
+              </div>
+              <div class="form-group">
+                <!-- <input name="why" type="text" class="form-control" placeholder="Why?"> -->
+                <textarea name="why" class="form-control" rows="3" placeholder="Why?"></textarea>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- .modal.fade -->
+</template>
 
 <template name="header">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
