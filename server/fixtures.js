@@ -30,12 +30,14 @@ if (db.focuses.find().count() === 0) {
   db.tasks.insert({
     title: "Primal Task!",
     focusId: primalId,
+    userId: userId,
     completed: false,
     created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
     title: "Primal Task!",
     focusId: primalId,
+    userId: userId,
     completed: false,
     created: now - 3 * 24 * 3600 * 1000,
   });
