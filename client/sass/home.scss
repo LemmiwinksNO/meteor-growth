@@ -147,21 +147,23 @@ button.new-focus {
     .title {
       font-size: 30px;
       display: inline-block;
-      width: 90%;
+      width: 100%;
     }
     .edit-focus {
       font-size: 24px;
       float: right;
       position: absolute;
       cursor: pointer;
-      color: #999;
+      color: #333;
       margin-left: 2%;
+      display: none;
     }
   }
 
-  // Had to go down to span to make this change
-  &:hover {
-    .edit-focus span { color: #333; }
+  // Only show edit button when we hover the focus
+  &:hover header.focus-header {
+    .title { width: 90%; }
+    .edit-focus { display: inline-block; }
   }
 
   hr { border-top: 1px solid #ddd; }

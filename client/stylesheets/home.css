@@ -131,7 +131,7 @@ button.new-focus:hover {
 .focus-area header.focus-header .title {
   font-size: 30px;
   display: inline-block;
-  width: 90%;
+  width: 100%;
 }
 /* line 152, ../sass/home.scss */
 .focus-area header.focus-header .edit-focus {
@@ -139,18 +139,23 @@ button.new-focus:hover {
   float: right;
   position: absolute;
   cursor: pointer;
-  color: #999;
-  margin-left: 2%;
-}
-/* line 164, ../sass/home.scss */
-.focus-area:hover .edit-focus span {
   color: #333;
+  margin-left: 2%;
+  display: none;
 }
-/* line 167, ../sass/home.scss */
+/* line 165, ../sass/home.scss */
+.focus-area:hover header.focus-header .title {
+  width: 90%;
+}
+/* line 166, ../sass/home.scss */
+.focus-area:hover header.focus-header .edit-focus {
+  display: inline-block;
+}
+/* line 169, ../sass/home.scss */
 .focus-area hr {
   border-top: 1px solid #ddd;
 }
-/* line 169, ../sass/home.scss */
+/* line 171, ../sass/home.scss */
 .focus-area .focus-img {
   display: block;
   max-width: 100%;
@@ -159,17 +164,17 @@ button.new-focus:hover {
   height: auto;
   margin: 10px auto;
 }
-/* line 178, ../sass/home.scss */
+/* line 180, ../sass/home.scss */
 .focus-area ul {
   margin: 0;
 }
-/* line 180, ../sass/home.scss */
+/* line 182, ../sass/home.scss */
 .focus-area ul.item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 182, ../sass/home.scss */
+/* line 184, ../sass/home.scss */
 .focus-area li.task {
   display: block;
   list-style: none;
@@ -181,14 +186,14 @@ button.new-focus:hover {
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   position: relative;
 }
-/* line 191, ../sass/home.scss */
+/* line 193, ../sass/home.scss */
 .focus-area li.task .task-controls {
   display: inline-block;
   float: left;
   margin-left: .5em;
   margin-right: .5em;
 }
-/* line 197, ../sass/home.scss */
+/* line 199, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary {
   position: absolute;
   top: 0;
@@ -197,17 +202,17 @@ button.new-focus:hover {
   float: none;
   margin: 0;
 }
-/* line 205, ../sass/home.scss */
+/* line 207, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .task-checker input[type=checkbox] {
   margin: 0;
   padding: 0;
   visibility: hidden;
 }
-/* line 211, ../sass/home.scss */
+/* line 213, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno {
   position: relative;
 }
-/* line 215, ../sass/home.scss */
+/* line 217, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno label:after,
 .focus-area li.task .task-controls.task-primary .action-yesno label:before {
   content: '';
@@ -220,19 +225,19 @@ button.new-focus:hover {
   color: #000;
   opacity: .2;
 }
-/* line 227, ../sass/home.scss */
+/* line 229, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno label:before {
   position: absolute;
   left: 0;
 }
-/* line 232, ../sass/home.scss */
+/* line 234, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno label:after {
   height: 10px;
   width: 10px;
   margin: 15px auto;
   border: 1px solid #222;
 }
-/* line 241, ../sass/home.scss */
+/* line 243, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno label:hover:after,
 .focus-area li.task .task-controls.task-primary .action-yesno label:focus:after,
 .focus-area li.task .task-controls.task-primary .action-yesno input[type=checkbox]:checked + label:after {
@@ -253,7 +258,7 @@ button.new-focus:hover {
   -ms-filter: "alpha(Opacity=50)" !important;
   filter: alpha(opacity=50) !important;
 }
-/* line 257, ../sass/home.scss */
+/* line 259, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .task-checker label {
   display: inline-block;
   width: 3em;
@@ -262,7 +267,7 @@ button.new-focus:hover {
   vertical-align: top;
   cursor: pointer;
 }
-/* line 268, ../sass/home.scss */
+/* line 270, ../sass/home.scss */
 .focus-area li.task .task-text {
   display: block;
   padding: .75em 0 .75em 3.5em;
@@ -270,111 +275,111 @@ button.new-focus:hover {
   word-wrap: break-word;
 }
 
-/* line 287, ../sass/home.scss */
+/* line 289, ../sass/home.scss */
 .color-worst {
   background-color: #e6b8af;
 }
-/* line 290, ../sass/home.scss */
+/* line 292, ../sass/home.scss */
 .color-worst .action-yesno label {
   background-color: #c0523c;
 }
-/* line 292, ../sass/home.scss */
+/* line 294, ../sass/home.scss */
 .color-worst .action-yesno label:hover {
   background-color: #994130;
 }
 
-/* line 295, ../sass/home.scss */
+/* line 297, ../sass/home.scss */
 .color-worse {
   background-color: #f4cccc;
 }
-/* line 298, ../sass/home.scss */
+/* line 300, ../sass/home.scss */
 .color-worse .action-yesno label {
   background-color: #d94e4e;
 }
-/* line 300, ../sass/home.scss */
+/* line 302, ../sass/home.scss */
 .color-worse .action-yesno label:hover {
   background-color: #c92b2b;
 }
 
-/* line 303, ../sass/home.scss */
+/* line 305, ../sass/home.scss */
 .color-bad {
   background-color: #fce5cd;
 }
-/* line 306, ../sass/home.scss */
+/* line 308, ../sass/home.scss */
 .color-bad .action-yesno label {
   background-color: #f39a3d;
 }
-/* line 308, ../sass/home.scss */
+/* line 310, ../sass/home.scss */
 .color-bad .action-yesno label:hover {
   background-color: #ef810e;
 }
 
-/* line 311, ../sass/home.scss */
+/* line 313, ../sass/home.scss */
 .color-neutral {
   background-color: #fff2cc;
 }
-/* line 314, ../sass/home.scss */
+/* line 316, ../sass/home.scss */
 .color-neutral .action-yesno label {
   background-color: #ffcb33;
 }
-/* line 316, ../sass/home.scss */
+/* line 318, ../sass/home.scss */
 .color-neutral .action-yesno label:hover {
   background-color: #ffbe00;
 }
 
-/* line 319, ../sass/home.scss */
+/* line 321, ../sass/home.scss */
 .color-good {
   background-color: #d9ead3;
 }
-/* line 322, ../sass/home.scss */
+/* line 324, ../sass/home.scss */
 .color-good .action-yesno label {
   background-color: #80b96b;
 }
-/* line 324, ../sass/home.scss */
+/* line 326, ../sass/home.scss */
 .color-good .action-yesno label:hover {
   background-color: #64a34e;
 }
 
-/* line 327, ../sass/home.scss */
+/* line 329, ../sass/home.scss */
 .color-better {
   background-color: #d0e0e3;
 }
-/* line 330, ../sass/home.scss */
+/* line 332, ../sass/home.scss */
 .color-better .action-yesno label {
   background-color: #70a1aa;
 }
-/* line 332, ../sass/home.scss */
+/* line 334, ../sass/home.scss */
 .color-better .action-yesno label:hover {
   background-color: #568891;
 }
 
-/* line 335, ../sass/home.scss */
+/* line 337, ../sass/home.scss */
 .color-best {
   background-color: #c9daf8;
 }
-/* line 338, ../sass/home.scss */
+/* line 340, ../sass/home.scss */
 .color-best .action-yesno label {
   background-color: #427de6;
 }
-/* line 340, ../sass/home.scss */
+/* line 342, ../sass/home.scss */
 .color-best .action-yesno label:hover {
   background-color: #1c60d9;
 }
 
-/* line 343, ../sass/home.scss */
+/* line 345, ../sass/home.scss */
 .color-completed {
   background-color: #d9d9d9;
 }
-/* line 346, ../sass/home.scss */
+/* line 348, ../sass/home.scss */
 .color-completed .action-yesno label {
   background-color: #8c8c8c;
 }
-/* line 348, ../sass/home.scss */
+/* line 350, ../sass/home.scss */
 .color-completed .action-yesno label:hover {
   background-color: #737373;
 }
 
-/* line 353, ../sass/home.scss */
+/* line 355, ../sass/home.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
