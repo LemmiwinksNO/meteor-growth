@@ -41,7 +41,7 @@ $headerHeight: 40px;
 
 
 /** HEADER **/
-header {
+#header-region header {
   background: black;
   color: #fff;
   text-align: center;
@@ -140,16 +140,28 @@ button.new-focus {
   padding: 1.5em;
   background: #f5f5f5;
   border: 1px solid #ccc;
-  // If you want to go chains style
-  // width: 400px;
-  // display: inline-block !important;
-  // position: relative;
-  // vertical-align: top !important;
-  // clear: none !important;
 
-  h2.focus-title {
-    font-size: 30px;
+  header.focus-header {
     margin-bottom: 20px;
+
+    .title {
+      font-size: 30px;
+      display: inline-block;
+      width: 90%;
+    }
+    .edit-focus {
+      font-size: 24px;
+      float: right;
+      position: absolute;
+      cursor: pointer;
+      color: #999;
+      margin-left: 2%;
+    }
+  }
+
+  // Had to go down to span to make this change
+  &:hover {
+    .edit-focus span { color: #333; }
   }
 
   hr { border-top: 1px solid #ddd; }

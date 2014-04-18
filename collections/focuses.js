@@ -9,7 +9,7 @@ Meteor.methods({
   newFocus: function(focusAttributes) {
     var user = Meteor.user();
 
-    // ensure user is logged in
+    // Ensure user is logged in
     if (!user)
       throw new Meteor.Error(401, "You need to log in to create focuses");
 

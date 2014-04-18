@@ -46,6 +46,7 @@
   </div> <!-- .modal.fade -->
 </template>
 
+<!-- Header -->
 <template name="header">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -76,11 +77,10 @@
   <button type="button" class="new-focus">New Focus</button>
 </template>
 
+<!-- Focus List -->
 <template name="focusList">
   <div class="focus-list container-fluid">
-
     {{> reminder}}
-
     <div class="row">
       {{#each focuses}}
         {{> focusItem}}
@@ -89,6 +89,7 @@
   </div> <!-- #main-region -->
 </template>
 
+<!-- Reminder -->
 <template name="reminder">
   <div class="row">
     <div class="col-md-12">
@@ -97,12 +98,18 @@
   </div>
 </template>
 
+<!-- Focus Item -->
 <template name="focusItem">
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="focus-item">
       <div class="focus-area">
-        <img class="focus-img" src="{{imageUrl}}" />
-        <h2 class="focus-title ellipsis">{{title}}</h2>
+        <!-- <img class="focus-img" src="{{imageUrl}}" /> -->
+        <header class="focus-header">
+          <span class="title ellipsis">{{title}}</span>
+          <span class="edit-focus">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </span>
+        </header>
         <div class="input-group input-group-lg">
           <input type="text" class="form-control" placeholder="New Task">
           <span class="input-group-btn">
@@ -122,6 +129,7 @@
   </div>
 </template>
 
+<!-- Task Item -->
 <template name="taskItem">
   <li class="task uncompleted color-neutral">
     <!-- left-hand side checkbox-->
