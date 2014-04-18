@@ -4,6 +4,22 @@ if (typeof db === 'undefined')
 
 db.focuses = new Meteor.Collection('focuses');
 
+ownsFocus = function(userId, focus) {
+  return focus && focus.userId == userId;
+};
+// User can update if owns focus
+db.focuses.allow({
+  update: ownsFocus,
+  remove: ownsFocus
+});
+
+// User can't update with a blank title
+// db.focuses.deny({
+//   update: function() {
+//     console.log("deny called ", this);
+//   }
+// });
+
 // Define meteor methods -> server-side functions called client-side.
 Meteor.methods({
   newFocus: function(focusAttributes) {
