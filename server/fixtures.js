@@ -2,9 +2,11 @@
 if (db.focuses.find().count() === 0) {
   var now = new Date().getTime();
 
-  // This is my user ID, I don't think Meteor.userId() would work here
-  // but it's worth trying.
-  userId = "zWf3Bu2hEQKzjiqBw";
+  // Create user
+  var userId = Accounts.createUser({
+    'email' : 'macreasy@gmail.com',
+    'password': '123456'  // encrypted automatically
+  });
 
   // Insert 3 focuses
   var primalId = db.focuses.insert({
