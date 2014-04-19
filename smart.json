@@ -1,8 +1,6 @@
 {
   "packages": {
     "spin": {},
-    "iron-router": {},
-    "iron-router-progress": {},
     "accounts-ui-bootstrap-3": {},
     "bootstrap-3": {}
   }

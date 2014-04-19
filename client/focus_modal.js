@@ -17,6 +17,7 @@ Template.focusModal.events({
       var currentFocusId = $form.data('focus-id');
       db.focuses.update(currentFocusId, {$set: focusAttributes}, function(error) {
         if (error) {
+          console.log("error = ", error);
           alert(error.reason);
         } else {
           $('#focus-modal').modal('hide');
@@ -37,5 +38,18 @@ Template.focusModal.events({
   // This fires when modal is hidden. Clear the form.
   'hidden.bs.modal': function(e) {
     $(e.target).find('form')[0].reset();
+  },
+
+  // Delete a focus
+  'click .delete': function(e) {
+    e.preventDefault();
+
+    $deleteButton = $(e.target);
+    var focusId = $deleteButton.parents('form').data('focus-id');
+
+    if (focusId && confirm("Delete this focus?")) {
+      db.focuses.remove(focusId);
+      $('#focus-modal').modal('hide');
+    }
   }
 });

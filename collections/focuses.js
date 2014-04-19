@@ -7,18 +7,19 @@ db.focuses = new Meteor.Collection('focuses');
 ownsFocus = function(userId, focus) {
   return focus && focus.userId == userId;
 };
-// User can update if owns focus
+
 db.focuses.allow({
+  // User can update/delete if owns focus
   update: ownsFocus,
   remove: ownsFocus
 });
 
-// User can't update with a blank title
-// db.focuses.deny({
-//   update: function() {
-//     console.log("deny called ", this);
-//   }
-// });
+db.focuses.deny({
+  // User can't update with a blank title
+  update: function(userId, focus, fieldNames) {
+    return fieldNames.title.length > 0;
+  }
+});
 
 // Define meteor methods -> server-side functions called client-side.
 Meteor.methods({
