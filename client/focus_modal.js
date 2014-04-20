@@ -1,18 +1,12 @@
-// Focus modal template helpers
-Template.focusModal.helpers({
-  // If user clicked edit on a focus to open focusModal, load it up!
-  // If we have a focus, use it.
-  'focus': function(){
-    return Session.get('currentFocus');
-  }
-});
-
 // Focus modal event handlers
 Template.focusModal.events({
   'submit form': function(e) {
     e.preventDefault();  // So browser doesn't try to submit form.
 
-    $form = $(e.target);
+    console.log("submit form this = ", this);
+
+    var $form = $(e.target);
+    var focusId = this._id;
 
     // Get our new focus inputs
     var focusAttributes = {
@@ -21,10 +15,8 @@ Template.focusModal.events({
       why: $form.find('[name=why]').val()
     };
 
-    var action = $form.data('action');
-
-    if ($form.data('action') === 'update') {
-      var focusId = $form.data('focus-id');
+    // Do we have a focus? If so, update.
+    if (focusId) {
       Meteor.call('updateFocus', focusAttributes, focusId, function(error) {
         if (error) {
           alert(error.reason);
@@ -32,7 +24,7 @@ Template.focusModal.events({
           $('#focus-modal').modal('hide');
         }
       });
-    } else if ($form.data('action') === 'new') {
+    } else {
       // Meteor method focus insertion ('methodName', arguments, callback)
       Meteor.call('newFocus', focusAttributes, function(error, id) {
         if (error) {
@@ -55,9 +47,7 @@ Template.focusModal.events({
   'click .delete': function(e) {
     e.preventDefault();
 
-    $deleteButton = $(e.target);
-    var focusId = $deleteButton.parents('form').data('focus-id');
-
+    var focusId = this._id;
     if (focusId && confirm("Delete this focus?")) {
       db.focuses.remove(focusId);
       $('#focus-modal').modal('hide');
