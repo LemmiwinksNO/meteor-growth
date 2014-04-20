@@ -36,11 +36,9 @@ Template.focusModal.events({
     }
   },
 
-  // This fires when modal is hidden.
-  // (1) unset currentFocus; (2) remove data(otherwise it lingers).
+  // This fires when modal is hidden. Remove currentFocus from Session
   'hidden.bs.modal': function(e) {
     Session.set('currentFocus', null);
-    $(e.target).find('form').removeData();
   },
 
   // Delete a focus
