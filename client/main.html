@@ -21,25 +21,31 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">New Focus</h4>
+          <h4 class="modal-title" id="myModalLabel">
+            {{#if focus._id}} Edit Focus {{else}} Add New Focus {{/if}}
+          </h4>
         </div>
-        <form role="form">
+        <form role="form" data-focus-id="{{focus._id}}" data-action="{{#if focus._id}}update{{else}}new{{/if}}">
           <div class="modal-body">
               <div class="form-group">
-                <input name="title" type="text" class="form-control" placeholder="Title">
+                <input name="title" type="text" class="form-control" placeholder="Title" value="{{focus.title}}">
               </div>
               <div class="form-group">
-                <input name="imageUrl" type="text" class="form-control" placeholder="Picture URL">
+                <input name="imageUrl" type="text" class="form-control" placeholder="Picture URL" value="{{focus.imageUrl}}">
               </div>
               <div class="form-group">
-                <!-- <input name="why" type="text" class="form-control" placeholder="Why?"> -->
-                <textarea name="why" class="form-control" rows="3" placeholder="Why?"></textarea>
+                <textarea name="why" class="form-control" rows="3" placeholder="Why?">{{focus.why}}</textarea>
               </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger delete">Delete</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- Show delete button if editing a focus -->
+            {{#if focus._id}}
+              <button type="button" class="btn btn-danger delete">Delete</button>
+            {{/if}}
+            <button type="submit" class="btn btn-primary">
+              {{#if focus._id}} Update {{else}} Create {{/if}}
+            </button>
           </div>
         </form>
       </div>

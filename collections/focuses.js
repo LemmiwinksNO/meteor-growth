@@ -4,21 +4,16 @@ if (typeof db === 'undefined')
 
 db.focuses = new Meteor.Collection('focuses');
 
+// Permissions
 ownsFocus = function(userId, focus) {
   return focus && focus.userId == userId;
 };
 
+// Allow and Deny Callbacks
 db.focuses.allow({
   // User can update/delete if owns focus
   update: ownsFocus,
   remove: ownsFocus
-});
-
-db.focuses.deny({
-  // User can't update with a blank title
-  update: function(userId, focus, fieldNames) {
-    return fieldNames.title.length > 0;
-  }
 });
 
 // Define meteor methods -> server-side functions called client-side.
@@ -32,7 +27,7 @@ Meteor.methods({
 
     // Ensure the focus has a title
     if (!focusAttributes.title)
-      throw new Meteor.Error(422, "Please fill in a headline");
+      throw new Meteor.Error(422, "Please fill in a title");
 
     var focus = {
       userId: user._id,
@@ -44,5 +39,13 @@ Meteor.methods({
     var focusId = db.focuses.insert(focus);
 
     return focusId;
+  },
+
+  updateFocus: function(focusAttributes, focusId) {
+    // Ensure the focus has a title
+    if (!focusAttributes.title)
+      throw new Meteor.Error(401, "Please fill in a title");
+
+    db.focuses.update(focusId, {$set: focusAttributes});
   }
 });

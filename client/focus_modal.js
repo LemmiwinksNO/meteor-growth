@@ -1,3 +1,13 @@
+// Focus modal template helpers
+Template.focusModal.helpers({
+  // If user clicked edit on a focus to open focusModal, load it up!
+  // If we have a focus, use it.
+  'focus': function(){
+    return Session.get('currentFocus');
+  }
+});
+
+// Focus modal event handlers
 Template.focusModal.events({
   'submit form': function(e) {
     e.preventDefault();  // So browser doesn't try to submit form.
@@ -14,10 +24,9 @@ Template.focusModal.events({
     var action = $form.data('action');
 
     if ($form.data('action') === 'update') {
-      var currentFocusId = $form.data('focus-id');
-      db.focuses.update(currentFocusId, {$set: focusAttributes}, function(error) {
+      var focusId = $form.data('focus-id');
+      Meteor.call('updateFocus', focusAttributes, focusId, function(error) {
         if (error) {
-          console.log("error = ", error);
           alert(error.reason);
         } else {
           $('#focus-modal').modal('hide');
@@ -35,9 +44,11 @@ Template.focusModal.events({
     }
   },
 
-  // This fires when modal is hidden. Clear the form.
+  // This fires when modal is hidden.
+  // (1) unset currentFocus; (2) remove data(otherwise it lingers).
   'hidden.bs.modal': function(e) {
-    $(e.target).find('form')[0].reset();
+    Session.set('currentFocus', null);
+    $(e.target).find('form').removeData();
   },
 
   // Delete a focus
