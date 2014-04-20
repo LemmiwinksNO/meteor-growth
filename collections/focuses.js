@@ -44,7 +44,7 @@ Meteor.methods({
   updateFocus: function(focusAttributes, focusId) {
     // Ensure the focus has a title
     if (!focusAttributes.title)
-      throw new Meteor.Error(401, "Please fill in a title");
+      throw new Meteor.Error(422, "Please fill in a title");
 
     db.focuses.update(focusId, {$set: focusAttributes});
   }
