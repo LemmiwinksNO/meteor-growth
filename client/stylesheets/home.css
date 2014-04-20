@@ -230,8 +230,9 @@ button.new-focus:hover {
   width: 10px;
   margin: 15px auto;
   border: 1px solid #222;
+  margin-top: 19px;
 }
-/* line 243, ../sass/home.scss */
+/* line 244, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .action-yesno label:hover:after,
 .focus-area li.task .task-controls.task-primary .action-yesno label:focus:after,
 .focus-area li.task .task-controls.task-primary .action-yesno input[type=checkbox]:checked + label:after {
@@ -245,14 +246,14 @@ button.new-focus:hover {
   margin: 0;
   font-size: 3.2em;
   line-height: .9375em;
-  height: .9375em;
-  width: 1.15em;
+  height: .85em;
+  width: 1em;
   text-align: center;
   opacity: 0.5 !important;
   -ms-filter: "alpha(Opacity=50)" !important;
   filter: alpha(opacity=50) !important;
 }
-/* line 259, ../sass/home.scss */
+/* line 260, ../sass/home.scss */
 .focus-area li.task .task-controls.task-primary .task-checker label {
   display: inline-block;
   width: 3em;
@@ -261,7 +262,7 @@ button.new-focus:hover {
   vertical-align: top;
   cursor: pointer;
 }
-/* line 270, ../sass/home.scss */
+/* line 271, ../sass/home.scss */
 .focus-area li.task .task-text {
   display: block;
   padding: .75em 0 .75em 3.5em;
@@ -269,111 +270,111 @@ button.new-focus:hover {
   word-wrap: break-word;
 }
 
-/* line 289, ../sass/home.scss */
+/* line 290, ../sass/home.scss */
 .color-worst {
   background-color: #e6b8af;
 }
-/* line 292, ../sass/home.scss */
+/* line 293, ../sass/home.scss */
 .color-worst .action-yesno label {
   background-color: #c0523c;
 }
-/* line 294, ../sass/home.scss */
+/* line 295, ../sass/home.scss */
 .color-worst .action-yesno label:hover {
   background-color: #994130;
 }
 
-/* line 297, ../sass/home.scss */
+/* line 298, ../sass/home.scss */
 .color-worse {
   background-color: #f4cccc;
 }
-/* line 300, ../sass/home.scss */
+/* line 301, ../sass/home.scss */
 .color-worse .action-yesno label {
   background-color: #d94e4e;
 }
-/* line 302, ../sass/home.scss */
+/* line 303, ../sass/home.scss */
 .color-worse .action-yesno label:hover {
   background-color: #c92b2b;
 }
 
-/* line 305, ../sass/home.scss */
+/* line 306, ../sass/home.scss */
 .color-bad {
   background-color: #fce5cd;
 }
-/* line 308, ../sass/home.scss */
+/* line 309, ../sass/home.scss */
 .color-bad .action-yesno label {
   background-color: #f39a3d;
 }
-/* line 310, ../sass/home.scss */
+/* line 311, ../sass/home.scss */
 .color-bad .action-yesno label:hover {
   background-color: #ef810e;
 }
 
-/* line 313, ../sass/home.scss */
+/* line 314, ../sass/home.scss */
 .color-neutral {
   background-color: #fff2cc;
 }
-/* line 316, ../sass/home.scss */
+/* line 317, ../sass/home.scss */
 .color-neutral .action-yesno label {
   background-color: #ffcb33;
 }
-/* line 318, ../sass/home.scss */
+/* line 319, ../sass/home.scss */
 .color-neutral .action-yesno label:hover {
   background-color: #ffbe00;
 }
 
-/* line 321, ../sass/home.scss */
+/* line 322, ../sass/home.scss */
 .color-good {
   background-color: #d9ead3;
 }
-/* line 324, ../sass/home.scss */
+/* line 325, ../sass/home.scss */
 .color-good .action-yesno label {
   background-color: #80b96b;
 }
-/* line 326, ../sass/home.scss */
+/* line 327, ../sass/home.scss */
 .color-good .action-yesno label:hover {
   background-color: #64a34e;
 }
 
-/* line 329, ../sass/home.scss */
+/* line 330, ../sass/home.scss */
 .color-better {
   background-color: #d0e0e3;
 }
-/* line 332, ../sass/home.scss */
+/* line 333, ../sass/home.scss */
 .color-better .action-yesno label {
   background-color: #70a1aa;
 }
-/* line 334, ../sass/home.scss */
+/* line 335, ../sass/home.scss */
 .color-better .action-yesno label:hover {
   background-color: #568891;
 }
 
-/* line 337, ../sass/home.scss */
+/* line 338, ../sass/home.scss */
 .color-best {
   background-color: #c9daf8;
 }
-/* line 340, ../sass/home.scss */
+/* line 341, ../sass/home.scss */
 .color-best .action-yesno label {
   background-color: #427de6;
 }
-/* line 342, ../sass/home.scss */
+/* line 343, ../sass/home.scss */
 .color-best .action-yesno label:hover {
   background-color: #1c60d9;
 }
 
-/* line 345, ../sass/home.scss */
+/* line 346, ../sass/home.scss */
 .color-completed {
   background-color: #d9d9d9;
 }
-/* line 348, ../sass/home.scss */
+/* line 349, ../sass/home.scss */
 .color-completed .action-yesno label {
   background-color: #8c8c8c;
 }
-/* line 350, ../sass/home.scss */
+/* line 351, ../sass/home.scss */
 .color-completed .action-yesno label:hover {
   background-color: #737373;
 }
 
-/* line 355, ../sass/home.scss */
+/* line 356, ../sass/home.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);

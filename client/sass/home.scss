@@ -236,6 +236,7 @@ button.new-focus {
             width: 10px;
             margin: 15px auto;
             border: 1px solid #222;
+            margin-top: 19px;
           }
 
           label:hover:after,
@@ -247,8 +248,8 @@ button.new-focus {
             margin: 0;
             font-size: 3.2em;
             line-height: .9375em;
-            height: .9375em;
-            width: 1.15em;
+            height: .85em;
+            width: 1em;
             text-align: center;
             opacity: .5!important;
             -ms-filter: "alpha(Opacity=50)"!important;
