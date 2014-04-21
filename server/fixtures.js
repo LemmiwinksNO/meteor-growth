@@ -1,6 +1,6 @@
 // Fixture data
 if (db.focuses.find().count() === 0) {
-  var now = new Date().getTime();
+  var now = new Date();
 
   // Create user
   var userId = Accounts.createUser({
