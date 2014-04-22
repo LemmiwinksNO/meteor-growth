@@ -5,6 +5,27 @@ Template.focusItem.helpers({
   }
 });
 
+var addNewTask = function (e) {
+  var now = new Date();
+  var $title = $(e.target).parents('.input-group').find('[name=new-task-title]');
+
+  var task = {
+    title: $title.val(),
+    focusId: this._id,
+    userId: this.userId,
+    completed: false,
+    created: now
+  };
+
+  Meteor.call('newTask', task, function(error, id) {
+    if (error) {
+      alert(error.reason);
+    } else {
+      $title.val('');
+    }
+  });
+};
+
 Template.focusItem.events({
   'click .edit-focus': function(e) {
     // Set this focus on session to update focus-modal
@@ -12,24 +33,18 @@ Template.focusItem.events({
     $('#focus-modal').modal();
   },
 
+  // User clicked new task
   'click .new-task': function(e) {
-    var now = new Date();
-    var $title = $(e.target).parents('.input-group').find('[name=new-task-title]');
+    // Call addNewTask(), using current context as 'this'
+    addNewTask.call(this, e);
+    // addNewTask.apply(this, arguments);
+    // addNewTask.bind(this, e)();
+    // _.bind(addNewTask, this, e)();
+  },
 
-    var task = {
-      title: $title.val(),
-      focusId: this._id,
-      userId: this.userId,
-      completed: false,
-      created: now
-    };
-
-    Meteor.call('newTask', task, function(error, id) {
-      if (error) {
-        alert(error.reason);
-      } else {
-        $title.val('');
-      }
-    });
+  // User pressed enter in new task input
+  'keypress input[new-task-title]': function(e) {
+    if (e.which === 13)
+      addNewTask.call(this, e);
   }
 });
