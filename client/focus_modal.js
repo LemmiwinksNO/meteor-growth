@@ -19,7 +19,7 @@ Template.focusModal.events({
     if (focusId) {
       Meteor.call('updateFocus', focusAttributes, focusId, function(error) {
         if (error) {
-          alert(error.reason);
+          Errors.throw(error.reason);
         } else {
           $('#focus-modal').modal('hide');
         }
@@ -28,7 +28,7 @@ Template.focusModal.events({
       // Meteor method focus insertion ('methodName', arguments, callback)
       Meteor.call('newFocus', focusAttributes, function(error, id) {
         if (error) {
-          alert(error.reason);
+          Errors.throw(error.reason);
         } else {
           $('#focus-modal').modal('hide');
         }

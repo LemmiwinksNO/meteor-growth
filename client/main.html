@@ -6,8 +6,11 @@
 
 <body>
   <div id="wrap">
-    <div id="header-region">{{> header}}</div>
+    <div id="header-region">
+      {{> header}}
+    </div>
     <div id="main-region">
+      {{> errors}}
       {{> focusList}}
     </div>
   </div> <!-- #wrap -->
@@ -42,6 +45,25 @@
   <header><h1><a href="/">GROW</a></h1></header>
   <div class="login-buttons">{{> loginButtons}}</div>
   <button type="button" class="new-focus">New Focus</button>
+</template>
+
+<!-- Errors -->
+<template name="errors">
+  <div class="container errors row-fluid">
+    {{#each errors}}
+      {{> error}}
+    {{/each}}
+  </div>
+</template>
+
+<!-- Single Error -->
+<template name="error">
+  <div class="alert alert-danger">
+    <button class="close" type="button" data-dismiss="alert">
+      &times;
+    </button>
+    {{message}}
+  </div>
 </template>
 
 <!-- Focus List -->

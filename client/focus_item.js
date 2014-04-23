@@ -42,7 +42,7 @@ var addNewTask = function (e) {
 
   Meteor.call('newTask', task, function(error, id) {
     if (error) {
-      alert(error.reason);
+      Errors.throw(error.reason);
     } else {
       $title.val('');
     }
