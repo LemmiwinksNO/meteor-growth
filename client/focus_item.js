@@ -17,7 +17,7 @@ Template.focusItem.events({
     // Call addNewTask(), using current context as 'this'
     addNewTask.call(this, e);
     // addNewTask.apply(this, arguments);
-    // addNewTask.bind(this, e)();
+    // addNewTask.bind(this, e)();  // Use bind when you want to create a new function
     // _.bind(addNewTask, this, e)();
   },
 
