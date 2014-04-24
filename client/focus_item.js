@@ -28,6 +28,7 @@ Template.focusItem.events({
   }
 });
 
+// Add a new task to tasks collection (using Meteor method)
 var addNewTask = function (e) {
   var now = new Date();
   var $title = $(e.target).parents('.input-group').find('[name=new-task-title]');

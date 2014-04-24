@@ -161,11 +161,11 @@
 
 <!-- Task Item -->
 <template name="taskItem">
-  <li class="task uncompleted color-neutral">
+  <li class="task {{status}}">
     <!-- left-hand side checkbox-->
     <div class="task-controls task-primary">
       <span class="task-checker action-yesno">
-        <input type="checkbox" id="{{_id}}" class="visuallyhidden focusable">
+        <input type="checkbox" id="{{_id}}" class="visuallyhidden focusable" {{checked}}>
         <label for="{{_id}}"></label>
       </span>
     </div>
