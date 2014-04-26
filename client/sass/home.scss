@@ -105,7 +105,7 @@ $headerHeight: 40px;
 
 // Focus modal styling
 body.modal-open {
-  // By default this does hides all overflow. Which is good if you don't have a 
+  // By default this does hides all overflow. Which is good if you don't have a
   // scroll bar showing, but if one is showing, it hides it temporarily making the
   // screen jump.
   // overflow-y: scroll;
@@ -273,6 +273,17 @@ button.new-focus {
       padding: .75em 0 .75em 3.5em;
       line-height: 1.4;
       word-wrap: break-word;
+
+      .edit-task {
+        float: right;
+        margin-right: 10px;
+        visibility: hidden;
+        cursor: pointer;
+      }
+    }
+
+    &:hover .edit-task {
+      visibility: visible;
     }
   }
 }
