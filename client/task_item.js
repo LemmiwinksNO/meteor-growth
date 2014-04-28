@@ -12,6 +12,7 @@ Template.taskItem.helpers({
 });
 
 Template.taskItem.events({
+  // User checked or unchecked the task
   'click input[type=checkbox]': function(e) {
     // Did we check it or uncheck it?
     var checked = $(e.target).prop('checked');
@@ -24,5 +25,9 @@ Template.taskItem.events({
         }
       });
     }
+  },
+  'click .edit-task': function(e) {
+    Session.set('currentTask', this);
+    $("#task-modal").modal();
   }
 });

@@ -34,6 +34,7 @@ if (db.focuses.find().count() === 0) {
     focusId: primalId,
     userId: userId,
     completed: false,
+    why: "Keep body healthy and supple",
     created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -41,6 +42,7 @@ if (db.focuses.find().count() === 0) {
     focusId: primalId,
     userId: userId,
     completed: false,
+    why: "Keep body healthy and supple",
     created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -48,6 +50,7 @@ if (db.focuses.find().count() === 0) {
     focusId: primalId,
     userId: userId,
     completed: false,
+    why: "Keep body healthy and supple",
     created: now - 7 * 24 * 3600 * 1000,
   });
 
@@ -56,6 +59,7 @@ if (db.focuses.find().count() === 0) {
     focusId: programmerId,
     userId: userId,
     completed: false,
+    why: "Get into the habit of building every day",
     created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -63,6 +67,7 @@ if (db.focuses.find().count() === 0) {
     focusId: programmerId,
     userId: userId,
     completed: false,
+    why: "Get into the habit of building every day",
     created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -70,6 +75,7 @@ if (db.focuses.find().count() === 0) {
     focusId: programmerId,
     userId: userId,
     completed: false,
+    why: "Get into the habit of building every day",
     created: now - 7 * 24 * 3600 * 1000,
   });
 
@@ -78,6 +84,7 @@ if (db.focuses.find().count() === 0) {
     focusId: elephantId,
     userId: userId,
     completed: false,
+    why: "Find stillness",
     created: now - 1 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -85,6 +92,7 @@ if (db.focuses.find().count() === 0) {
     focusId: elephantId,
     userId: userId,
     completed: false,
+    why: "To slow down the mind",
     created: now - 3 * 24 * 3600 * 1000,
   });
   db.tasks.insert({
@@ -92,6 +100,7 @@ if (db.focuses.find().count() === 0) {
     focusId: elephantId,
     userId: userId,
     completed: false,
+    why: "Be present",
     created: now - 7 * 24 * 3600 * 1000,
   });
 }

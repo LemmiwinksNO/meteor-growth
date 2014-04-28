@@ -65,6 +65,8 @@ Template.reminder.helpers({
       "Use your emotions. Channel them. Don't suppress them. You can't rely on an ideal state of mind in each moment, you will feel stress, pain, anger at times. You can funnel those feelings.",
       "Those things that make you uncomfortable, that is where you can grow.",
       "Learn to swim.",
+      "Trade your expectations for appreciation and the world changes instantly.",
+
 
     ];
 

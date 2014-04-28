@@ -7,5 +7,10 @@ Template.focusList.helpers({
   // This updates as we set currentFocus in Session!
   currentFocus: function(){
     return Session.get('currentFocus');
+  },
+  // Get currentTask so we can set it as the data context for taskModal.
+  // This updates as we set currentTask in Session.
+  currentTask: function(){
+    return Session.get('currentTask');
   }
 });
