@@ -8,8 +8,6 @@ Template.taskModal.events({
       why: $(e.target).find("textarea[name=why]").val()
     };
 
-    console.log("task = ", task);
-
     if (!task.title) {
       Errors.throw("Please set a title for the task");
     } else {

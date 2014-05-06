@@ -3,8 +3,6 @@ Template.focusModal.events({
   'submit form': function(e) {
     e.preventDefault();  // So browser doesn't try to submit form.
 
-    console.log("submit form this = ", this);
-
     var $form = $(e.target);
     var focusId = this._id;
 
