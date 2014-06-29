@@ -23,7 +23,7 @@ Template.taskModal.events({
   'click button.delete': function(e) {
     e.preventDefault();
 
-    if (this._id && confirm("Delete this task?")) {
+    if (this._id) {
       db.tasks.remove(this._id);
       $('#task-modal').modal('hide');
     }

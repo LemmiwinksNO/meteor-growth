@@ -1,0 +1,38 @@
+<!-- Modal for modifying a focus -->
+<template name="focusModal">
+  <div class="modal fade" id="focus-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">
+            {{#if _id}} Edit Focus {{else}} Add New Focus {{/if}}
+          </h4>
+        </div>
+        <form role="form">
+          <div class="modal-body">
+              <div class="form-group">
+                <input name="title" type="text" class="form-control" placeholder="Title" value="{{title}}">
+              </div>
+              <div class="form-group">
+                <input name="imageUrl" type="text" class="form-control" placeholder="Picture URL" value="{{imageUrl}}">
+              </div>
+              <div class="form-group">
+                <textarea name="why" class="form-control" rows="3" placeholder="Why?">{{why}}</textarea>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- Show delete button if editing a focus -->
+            {{#if _id}}
+              <button type="button" class="btn btn-danger delete">Delete</button>
+            {{/if}}
+            <button type="submit" class="btn btn-primary">
+              {{#if _id}} Update {{else}} Create {{/if}}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- .modal.fade -->
+</template>

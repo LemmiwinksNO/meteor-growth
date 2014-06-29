@@ -1,28 +1,15 @@
-@import "compass/css3";
-
 
 /** Variables **/
-$headerHeight: 40px;
+@headerHeight: 40px;
 
 
 /** Mixins **/
-// Syntax = name time timing_function
-@mixin animation ($properties) {
-    -webkit-animation: $properties;
-    -moz-animation: $properties;
-    animation: $properties;
-}
-
-@mixin animation-fill-mode ($mode) {
-    -webkit-animation-fill-mode: $mode;
-    -moz-animation-fill-mode: $mode;
-    animation-fill-mode: $mode;
-}
-
 
 /** GENERAL **/
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*, :before, :after { @include box-sizing(border-box) }
+*, :before, :after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 
 #main-region {
   padding-top: 70px;
@@ -46,7 +33,7 @@ $headerHeight: 40px;
   color: #fff;
   text-align: center;
   position: absolute;
-  height: $headerHeight;
+  height: @headerHeight;
   width: 100%;
   position: absolute;
 
@@ -289,77 +276,77 @@ button.new-focus {
 }
 
 // Task Colors
-$worst_color:     rgb(230, 184, 175);
-$worse_color:     rgb(244, 204, 204);
-$bad_color:       rgb(252, 229, 205);
-$neutral_color:   rgb(255, 242, 204);
-$good_color:      rgb(217, 234, 211);
-$better_color:    rgb(208, 224, 227);
-$best_color:      rgb(201, 218, 248);
-$completed_color: rgb(217, 217, 217);
+@worst_color:     rgb(230, 184, 175);
+@worse_color:     rgb(244, 204, 204);
+@bad_color:       rgb(252, 229, 205);
+@neutral_color:   rgb(255, 242, 204);
+@good_color:      rgb(217, 234, 211);
+@better_color:    rgb(208, 224, 227);
+@best_color:      rgb(201, 218, 248);
+@completed_color: rgb(217, 217, 217);
 
 .color-worst {
-  background-color: $worst_color;
+  background-color: @worst_color;
 
   .action-yesno label {
-    background-color: darken($worst_color, 30%);
-    &:hover { background-color: darken($worst_color, 40%); }
+    background-color: darken(@worst_color, 30%);
+    &:hover { background-color: darken(@worst_color, 40%); }
   }
 }
 .color-worse {
-  background-color: $worse_color;
+  background-color: @worse_color;
 
   .action-yesno label {
-    background-color: darken($worse_color, 30%);
-    &:hover { background-color: darken($worse_color, 40%); }
+    background-color: darken(@worse_color, 30%);
+    &:hover { background-color: darken(@worse_color, 40%); }
   }
 }
 .color-bad {
-  background-color: $bad_color;
+  background-color: @bad_color;
 
   .action-yesno label {
-    background-color: darken($bad_color, 30%);
-    &:hover { background-color: darken($bad_color, 40%); }
+    background-color: darken(@bad_color, 30%);
+    &:hover { background-color: darken(@bad_color, 40%); }
   }
 }
 .color-neutral {
-  background-color: $neutral_color;
+  background-color: @neutral_color;
 
   .action-yesno label {
-    background-color: darken($neutral_color, 30%);
-    &:hover { background-color: darken($neutral_color, 40%); }
+    background-color: darken(@neutral_color, 30%);
+    &:hover { background-color: darken(@neutral_color, 40%); }
   }
 }
 .color-good {
-  background-color: $good_color;
+  background-color: @good_color;
 
   .action-yesno label {
-    background-color: darken($good_color, 30%);
-    &:hover { background-color: darken($good_color, 40%); }
+    background-color: darken(@good_color, 30%);
+    &:hover { background-color: darken(@good_color, 40%); }
   }
 }
 .color-better {
-  background-color: $better_color;
+  background-color: @better_color;
 
   .action-yesno label {
-    background-color: darken($better_color, 30%);
-    &:hover { background-color: darken($better_color, 40%); }
+    background-color: darken(@better_color, 30%);
+    &:hover { background-color: darken(@better_color, 40%); }
   }
 }
 .color-best {
-  background-color: $best_color;
+  background-color: @best_color;
 
   .action-yesno label {
-    background-color: darken($best_color, 30%);
-    &:hover { background-color: darken($best_color, 40%); }
+    background-color: darken(@best_color, 30%);
+    &:hover { background-color: darken(@best_color, 40%); }
   }
 }
 .color-completed {
-  background-color: $completed_color;
+  background-color: @completed_color;
 
   .action-yesno label {
-    background-color: darken($completed_color, 30%);
-    &:hover { background-color: darken($completed_color, 40%); }
+    background-color: darken(@completed_color, 30%);
+    &:hover { background-color: darken(@completed_color, 40%); }
   }
 }
 

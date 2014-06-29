@@ -1,0 +1,30 @@
+
+<template name="focusItem">
+  <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="focus-item">
+      <div class="focus-area">
+        <!-- <img class="focus-img" src="{{imageUrl}}" /> -->
+        <header class="focus-header">
+          <span class="title ellipsis">{{title}}</span>
+          <span class="edit-focus">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </span>
+        </header>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" name="new-task-title" placeholder="New Task">
+          <span class="input-group-btn">
+            <button class="btn btn-default new-task" type="button">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+        </div>
+        <hr>
+        <ul class="task-list">
+          {{#each tasks}}
+            {{> taskItem}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,19 @@
+<!-- Individual task item in a focus list -->
+<template name="taskItem">
+  <li class="task {{status}}">
+    <!-- left-hand side checkbox-->
+    <div class="task-controls task-primary">
+      <span class="task-checker action-yesno">
+        <input type="checkbox" id="{{_id}}" class="visuallyhidden focusable" {{checked}}>
+        <label for="{{_id}}"></label>
+      </span>
+    </div>
+    <!-- main content -->
+    <div class="task-text">
+      {{title}}
+      <span class="edit-task">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </span>
+    </div>
+  </li>
+</template>

@@ -1,0 +1,14 @@
+<!-- Focus List - fills up main region -->
+<template name="focusList">
+  <div class="focus-list container-fluid">
+    {{> reminder}}
+    <div class="row">
+      {{#each focuses}}
+        {{> focusItem}}
+      {{/each}}
+      <!-- Add modals and set their data context -->
+      {{> focusModal currentFocus}}
+      {{> taskModal currentTask}}
+    </div> <!-- .row -->
+  </div> <!-- #main-region -->
+</template>
